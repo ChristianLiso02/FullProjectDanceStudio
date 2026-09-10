@@ -1,0 +1,77 @@
+ATTIVARE L'INVIO EMAIL DEL FORM "RICHIEDI LA TUA PROVA GRATUITA" (EmailJS)
+===========================================================================
+
+Il sito è già pronto per inviare email reali tramite EmailJS (gratuito,
+nessun server da gestire). Manca solo la configurazione, che fate voi in
+autonomia — io non posso creare l'account al posto vostro.
+
+Ci vogliono circa 5 minuti.
+
+1) CREARE L'ACCOUNT
+   - Andate su https://www.emailjs.com e registratevi (gratis)
+
+2) COLLEGARE LA VOSTRA EMAIL
+   - Dashboard -> "Email Services" -> "Add New Service"
+   - Scegliete il vostro provider (Gmail, Outlook, ecc.) e autorizzate
+   - Copiate il "Service ID" che viene generato (es. service_ab12cd3)
+
+3) CREARE IL TEMPLATE DELL'EMAIL
+   - Dashboard -> "Email Templates" -> "Create New Template"
+   - Nel corpo del template usate queste variabili (corrispondono ai campi
+     del form): {{nome}}, {{email}}, {{telefono}}, {{corso}}, {{messaggio}}
+   - Esempio di contenuto:
+
+       Nuova richiesta di prova gratuita
+
+       Nome: {{nome}}
+       Email: {{email}}
+       Telefono: {{telefono}}
+       Corso di interesse: {{corso}}
+       Messaggio: {{messaggio}}
+
+   - Nel campo "To Email" del template mettete l'indirizzo email della
+     scuola (dove volete ricevere le richieste)
+   - Salvate e copiate il "Template ID" (es. template_xy9876z)
+
+4) RECUPERARE LA PUBLIC KEY
+   - Dashboard -> "Account" -> "General" -> "Public Key"
+   - Copiatela (es. AbCdEfGhIjKlMnOp)
+
+5) INSERIRE I 3 VALORI NEL SITO
+   Aprite il file "script.js" e trovate queste righe vicino all'inizio:
+
+       const EMAILJS_PUBLIC_KEY = "";
+       const EMAILJS_SERVICE_ID = "";
+       const EMAILJS_TEMPLATE_ID = "";
+
+   Incollate i valori copiati ai passi 2-4, tra le virgolette. Esempio:
+
+       const EMAILJS_PUBLIC_KEY = "AbCdEfGhIjKlMnOp";
+       const EMAILJS_SERVICE_ID = "service_ab12cd3";
+       const EMAILJS_TEMPLATE_ID = "template_xy9876z";
+
+   Salvate, fate commit e push: da quel momento il form "Richiedi la tua
+   prova gratuita" invierà davvero le email.
+
+LIMITI DEL PIANO GRATUITO
+--------------------------
+200 email al mese, poi si blocca fino al mese successivo (più che
+sufficiente per iniziare). Se in futuro servisse di più, i piani a
+pagamento partono da pochi euro al mese.
+
+NOTA SU SICUREZZA
+------------------
+La Public Key resta visibile nel codice del sito (è normale, EmailJS è
+pensato per funzionare così: senza di essa non si può inviare nulla).
+Per limitare abusi, in EmailJS potete impostare in "Account -> Security"
+la lista dei domini autorizzati a usare la vostra chiave (es. solo il
+vostro dominio o christianliso02.github.io).
+
+RELAZIONE COL BACKEND JAVA
+----------------------------
+Questo è indipendente dal backend Java (cartella separata, repo
+FullProjectDanceStudio-backend): potete usare EmailJS adesso come
+soluzione ponte, e passare al backend più avanti se vi servirà di più
+(es. salvare le richieste in un database, gestire prenotazioni, ecc.).
+Se in futuro configurate anche il backend (BOOKING_API_URL in script.js),
+EmailJS avrà la priorità finché resterà configurato.

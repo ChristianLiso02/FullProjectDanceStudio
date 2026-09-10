@@ -4,12 +4,28 @@
    nav attiva, contatori animati, reveal on scroll, form contatti.
    ========================================================= */
 
-// MODIFICA: quando il backend sarà online (repo separato:
-// github.com/ChristianLiso02/FullProjectDanceStudio-backend), imposta qui
-// il suo URL pubblico, es. "https://api.fullprojectdancestudio.it/api/bookings".
-// Finché resta vuota, il form "Richiedi la tua prova gratuita" funziona in
-// modalità dimostrativa (nessuna chiamata di rete).
+/* ---------- Invio del form "Richiedi la tua prova gratuita" ----------
+   Tre modalità possibili, scelte automaticamente in quest'ordine:
+   1) EmailJS  — se EMAILJS_PUBLIC_KEY/SERVICE_ID/TEMPLATE_ID sono compilati:
+      invia l'email direttamente dal browser, nessun backend necessario.
+      Vedi EMAILJS-SETUP.txt per come attivarlo (2 minuti).
+   2) Backend  — se EmailJS non è configurato ma BOOKING_API_URL sì: usa il
+      backend Java (repo separato github.com/ChristianLiso02/
+      FullProjectDanceStudio-backend), quando sarà online.
+   3) Demo     — se nessuna delle due è configurata (stato attuale): nessuna
+      chiamata di rete, solo un console.log. */
+
+// MODIFICA: vedi EMAILJS-SETUP.txt
+const EMAILJS_PUBLIC_KEY = "";
+const EMAILJS_SERVICE_ID = "";
+const EMAILJS_TEMPLATE_ID = "";
+
+// MODIFICA: URL pubblico del backend Java, quando sarà online.
 const BOOKING_API_URL = "";
+
+if (EMAILJS_PUBLIC_KEY && window.emailjs) {
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Ogni init è isolata: se una funzione fallisce (browser datato, elemento
@@ -189,18 +205,20 @@ function initBackToTop() {
 }
 
 /* ---------- Validazione e invio dei form ----------
-   Se apiUrl è vuota, il form resta in modalità dimostrativa (nessuna
-   chiamata di rete, solo un console.log). Appena BOOKING_API_URL viene
-   impostata (in cima a questo file), il form "Prova gratuita" invia
-   davvero i dati al backend Java (repo separato). Il form "Gadget" non è
-   ancora collegato a nessun servizio e resta in modalità dimostrativa. */
-function initFormValidation(formId, successId, demoLabel, apiUrl = "") {
+   Se non è configurato né EmailJS né apiUrl, il form resta in modalità
+   dimostrativa (nessuna chiamata di rete, solo un console.log). Il form
+   "Gadget" non è ancora collegato a nessun servizio e resta in demo. */
+function initFormValidation(formId, successId, demoLabel, options = {}) {
+  const { apiUrl = "" } = options;
   const form = document.getElementById(formId);
   if (!form) return;
 
   const successMsg = document.getElementById(successId);
   const errorMsg = document.getElementById(`${formId}-error`);
   const submitBtn = form.querySelector('button[type="submit"]');
+  const emailJsReady = Boolean(
+    EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && window.emailjs
+  );
 
   const validators = {
     nome: (value) => value.trim().length >= 2,
@@ -233,7 +251,16 @@ function initFormValidation(formId, successId, demoLabel, apiUrl = "") {
 
     const data = Object.fromEntries(new FormData(form));
 
-    if (!apiUrl) {
+    if (data.website) {
+      // Honeypot anti-spam compilato: risposta "finta" di successo, nessun
+      // invio reale. Con EmailJS non c'è un server davanti che possa
+      // filtrarlo, quindi il controllo va fatto qui.
+      if (successMsg) successMsg.hidden = false;
+      form.reset();
+      return;
+    }
+
+    if (!emailJsReady && !apiUrl) {
       // Modalità dimostrativa: nessun servizio ancora collegato.
       console.log(`${demoLabel} (demo):`, data);
       if (successMsg) successMsg.hidden = false;
@@ -244,13 +271,17 @@ function initFormValidation(formId, successId, demoLabel, apiUrl = "") {
     if (submitBtn) submitBtn.disabled = true;
 
     try {
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) throw new Error(`Risposta del server: ${response.status}`);
+      if (emailJsReady) {
+        const { website, ...emailData } = data;
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, emailData);
+      } else {
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        if (!response.ok) throw new Error(`Risposta del server: ${response.status}`);
+      }
 
       if (successMsg) successMsg.hidden = false;
       form.reset();
@@ -271,7 +302,7 @@ function initFormValidation(formId, successId, demoLabel, apiUrl = "") {
 }
 
 function initContactForm() {
-  initFormValidation("contact-form", "form-success", "Richiesta prova gratuita", BOOKING_API_URL);
+  initFormValidation("contact-form", "form-success", "Richiesta prova gratuita", { apiUrl: BOOKING_API_URL });
 }
 
 function initGadgetForm() {

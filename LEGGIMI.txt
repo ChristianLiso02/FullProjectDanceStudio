@@ -1,0 +1,56 @@
+FULL PROJECT DANCE STUDIO — sito web
+======================================
+
+Come usarlo
+-----------
+Apri "index.html" nel browser. I file (index.html, style.css, script.js) e la
+cartella "img" (logo.jpg, team.jpg, orario-settimanale.jpg) devono restare
+tutti nella stessa posizione relativa in cui te li ho consegnati.
+
+Cosa è REALE in questa versione (preso dalle vostre locandine/logo/Instagram)
+------------------------------------------------------------------------------
+- Logo: la vostra immagine reale (cerchio nero, anello cromato, monogramma FPJ rosso/bianco)
+- Colori: nero, bianco e rosso presi dal logo e dalle locandine
+- Foto: la foto del team e la locandina dell'orario, usate in "Chi Siamo" e in Galleria
+- Sede: Via Gaetano Devitofrancesco, 6, 70124 Bari (BA) — presso Gym Italy
+- Discipline: Salsa, Bachata, Merengue, Urban
+- Staff (7): Gigi Bellomo, Luisa Dabbicco, Cristian Dell'Oro, Isabel Barba,
+  Gabriele Pizzimenti, Luana Spagnoletti, Christian Ranieri
+- Orario reale di Lunedì / Martedì / Giovedì (dalla locandina)
+- Tagline "Passione · Tecnica · Evoluzione"
+- Link Instagram a entrambi i profili: @full_project (gruppo) e
+  @fullprojectdancestudio.bari (scuola)
+
+Cosa è ancora SEGNAPOSTO (cerca "MODIFICA" nel codice di index.html)
+------------------------------------------------------------------------
+1. Numero di telefono/WhatsApp ed email — sezione Contatti
+2. Facebook e TikTok — i pulsanti social puntano ancora a "#"
+3. Le 3 card "Prossimi eventi" (date e titoli di esempio)
+4. Le 3 testimonianze (esempi, non recensioni reali)
+5. Il ruolo esatto di Gabriele Pizzimenti, Luana Spagnoletti e Christian
+   Ranieri (dalla locandina non risultava il loro giorno/corso specifico,
+   quindi compaiono come "Istruttore/Istruttrice Full Project" generico)
+6. I numeri "500+ allievi" e "10+ anni di passione" nell'hero sono ancora
+   una stima indicativa, non dati confermati
+7. Il modulo di contatto è solo dimostrativo: prima di pubblicare il sito,
+   collegalo a un servizio come Formspree, EmailJS o Netlify Forms (oppure
+   a un vostro backend) perché le richieste arrivino davvero via email
+8. Sezione "Gadget" (nuova): i 4 prodotti (T-Shirt, Felpa, Borsa, Borraccia)
+   con nomi/prezzi/immagini sono di esempio — sostituiscili con i vostri
+   gadget veri, foto comprese (al posto dei riquadri colorati). Anche il
+   modulo "Richiedi un gadget" è dimostrativo come quello di Contatti: va
+   collegato a un servizio di invio email prima di pubblicare il sito. È
+   pensato come richiesta d'ordine (non pagamento online): il cliente
+   lascia i suoi dati e vi accordate su ritiro/pagamento in sala
+
+Note tecniche
+-------------
+- Font da Google Fonts (Bebas Neue, Poppins, Pacifico): richiede connessione
+  internet per caricarli.
+- "index-anteprima-unico-file.html" è la stessa identica pagina con CSS, JS
+  e immagini incorporati in un unico file: usalo per un'anteprima rapida
+  cliccandoci sopra da solo, ovunque. Per modificare/pubblicare il sito,
+  lavora invece sui file separati (index.html, style.css, script.js, img/).
+- Il sito è responsive (desktop, tablet, mobile) ed è stato testato senza
+  errori di JavaScript, con menu mobile, animazioni allo scroll (con
+  fallback se JS è disattivato) e contatori numerici animati.

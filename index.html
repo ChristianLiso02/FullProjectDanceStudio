@@ -637,9 +637,18 @@
           <textarea id="messaggio" name="messaggio" rows="4"></textarea>
         </div>
 
+        <!-- Honeypot anti-spam: invisibile agli utenti reali, i bot spesso lo
+             compilano comunque. Il backend scarta silenziosamente le richieste
+             in cui questo campo arriva valorizzato. -->
+        <div class="form-row-honeypot" aria-hidden="true">
+          <label for="website">Non compilare questo campo</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
         <button type="submit" class="btn btn-primary btn-block">Invia richiesta</button>
         <p class="form-success" id="form-success" hidden>Grazie! Ti risponderemo al più presto per fissare la tua prova gratuita.</p>
-        <p class="form-note"><!-- MODIFICA: collega questo form a un servizio reale (es. Formspree, EmailJS) o a un backend --> Nota: form dimostrativo, da collegare a un servizio di invio email prima della pubblicazione.</p>
+        <p class="form-error" id="contact-form-error" hidden>Non è stato possibile inviare la richiesta. Riprova tra qualche minuto, oppure scrivici direttamente.</p>
+        <p class="form-note"><!-- MODIFICA: collega BOOKING_API_URL in script.js all'URL del backend (repo separato: github.com/ChristianLiso02/FullProjectDanceStudio-backend) quando sarà online --> Nota: form dimostrativo, da collegare al backend prima della pubblicazione.</p>
       </form>
     </div>
   </div>

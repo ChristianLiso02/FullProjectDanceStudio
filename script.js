@@ -4,6 +4,13 @@
    nav attiva, contatori animati, reveal on scroll, form contatti.
    ========================================================= */
 
+// MODIFICA: quando il backend sarà online (repo separato:
+// github.com/ChristianLiso02/FullProjectDanceStudio-backend), imposta qui
+// il suo URL pubblico, es. "https://api.fullprojectdancestudio.it/api/bookings".
+// Finché resta vuota, il form "Richiedi la tua prova gratuita" funziona in
+// modalità dimostrativa (nessuna chiamata di rete).
+const BOOKING_API_URL = "";
+
 document.addEventListener("DOMContentLoaded", () => {
   // Ogni init è isolata: se una funzione fallisce (browser datato, elemento
   // mancante, ecc.) le altre continuano a funzionare normalmente.
@@ -181,17 +188,19 @@ function initBackToTop() {
   });
 }
 
-/* ---------- Validazione e invio (demo) dei form ----------
-   NOTA: questi form NON inviano realmente email. Prima di pubblicare il
-   sito, collega l'azione di invio a un servizio come Formspree, EmailJS,
-   Netlify Forms oppure a un tuo backend, sostituendo il console.log
-   qui sotto con una vera chiamata (fetch/POST). La stessa funzione
-   generica gestisce sia il form "Prova gratuita" che il form "Gadget". */
-function initFormValidation(formId, successId, demoLabel) {
+/* ---------- Validazione e invio dei form ----------
+   Se apiUrl è vuota, il form resta in modalità dimostrativa (nessuna
+   chiamata di rete, solo un console.log). Appena BOOKING_API_URL viene
+   impostata (in cima a questo file), il form "Prova gratuita" invia
+   davvero i dati al backend Java (repo separato). Il form "Gadget" non è
+   ancora collegato a nessun servizio e resta in modalità dimostrativa. */
+function initFormValidation(formId, successId, demoLabel, apiUrl = "") {
   const form = document.getElementById(formId);
   if (!form) return;
 
   const successMsg = document.getElementById(successId);
+  const errorMsg = document.getElementById(`${formId}-error`);
+  const submitBtn = form.querySelector('button[type="submit"]');
 
   const validators = {
     nome: (value) => value.trim().length >= 2,
@@ -205,9 +214,10 @@ function initFormValidation(formId, successId, demoLabel) {
     row.classList.toggle("invalid", !isValid);
   };
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (successMsg) successMsg.hidden = true;
+    if (errorMsg) errorMsg.hidden = true;
 
     let formIsValid = true;
 
@@ -221,11 +231,35 @@ function initFormValidation(formId, successId, demoLabel) {
 
     if (!formIsValid) return;
 
-    // Demo: qui andrebbe la vera chiamata di invio (fetch a un servizio esterno).
-    console.log(`${demoLabel} (demo):`, Object.fromEntries(new FormData(form)));
+    const data = Object.fromEntries(new FormData(form));
 
-    if (successMsg) successMsg.hidden = false;
-    form.reset();
+    if (!apiUrl) {
+      // Modalità dimostrativa: nessun servizio ancora collegato.
+      console.log(`${demoLabel} (demo):`, data);
+      if (successMsg) successMsg.hidden = false;
+      form.reset();
+      return;
+    }
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error(`Risposta del server: ${response.status}`);
+
+      if (successMsg) successMsg.hidden = false;
+      form.reset();
+    } catch (err) {
+      console.error(`${demoLabel}: invio fallito`, err);
+      if (errorMsg) errorMsg.hidden = false;
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 
   // Rimuovi lo stato di errore non appena l'utente ricomincia a scrivere
@@ -237,7 +271,7 @@ function initFormValidation(formId, successId, demoLabel) {
 }
 
 function initContactForm() {
-  initFormValidation("contact-form", "form-success", "Richiesta prova gratuita");
+  initFormValidation("contact-form", "form-success", "Richiesta prova gratuita", BOOKING_API_URL);
 }
 
 function initGadgetForm() {

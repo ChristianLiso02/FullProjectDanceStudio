@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Project Dance Studio Bari | Salsa, Bachata, Merengue & Urban</title>
+<meta name="description" content="Full Project Dance Studio, la scuola di danze caraibiche e urban del gruppo Full Project a Bari, presso Gym Italy. Corsi di Salsa, Bachata, Merengue e Urban per tutti i livelli.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='23' fill='%230d0b0a' stroke='%23c2281d' stroke-width='2'/%3E%3Ctext x='50%25' y='60%25' font-size='18' font-family='sans-serif' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EFP%3C/text%3E%3C/svg%3E">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Se JavaScript è disabilitato/bloccato, mostra comunque tutti i contenuti
+     invece di lasciarli invisibili (normalmente rivelati dallo scroll via script.js) -->
+<noscript>
+  <style>[data-aos] { opacity: 1 !important; transform: none !important; }</style>
+</noscript>
+</head>
+<body>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header" id="header">
+  <div class="container nav-wrap">
+    <a href="#home" class="logo">
+      <img src="img/logo.jpg" alt="Full Project Dance Studio" class="logo-mark">
+      <span class="logo-text">FULL PROJECT<br><small>DANCE STUDIO &middot; BARI</small></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <ul>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#chi-siamo" class="nav-link">Chi Siamo</a></li>
+        <li><a href="#corsi" class="nav-link">Corsi</a></li>
+        <li><a href="#insegnanti" class="nav-link">Insegnanti</a></li>
+        <li><a href="#orari" class="nav-link">Orari</a></li>
+        <li><a href="#galleria" class="nav-link">Galleria</a></li>
+        <li><a href="#gadget" class="nav-link">Gadget</a></li>
+        <li><a href="#contatti" class="nav-link">Contatti</a></li>
+      </ul>
+    </nav>
+
+    <a href="#contatti" class="btn btn-primary nav-cta">Prova Gratuita</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+      <defs>
+        <radialGradient id="glow1" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#c2281d" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#c2281d" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="glow2" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#7c1712" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#7c1712" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="900" cy="180" r="420" fill="url(#glow1)"/>
+      <circle cx="220" cy="620" r="380" fill="url(#glow2)"/>
+      <g opacity="0.15" stroke="#c2281d" stroke-width="3" fill="none">
+        <path d="M100 700 Q 250 500 200 300 Q 150 150 300 60"/>
+        <path d="M1100 750 Q 950 550 1000 350 Q 1050 180 900 70"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="container hero-content">
+    <p class="eyebrow" data-aos>Un progetto del gruppo <a href="https://www.instagram.com/full_project/" target="_blank" rel="noopener"><strong>Full Project</strong></a></p>
+    <h1 data-aos>Balla la vita.<br><span class="text-accent">Senti il ritmo.</span></h1>
+    <p class="hero-lead" data-aos>
+      Salsa, Bachata, Merengue e Urban per tutti i livelli, dal primo passo alla pista.
+      Full Project Dance Studio è la scuola dove tecnica, energia e divertimento
+      si incontrano.
+    </p>
+    <p class="tagline hero-tagline" data-aos>Passione <span class="dot">&middot;</span> Tecnica <span class="dot">&middot;</span> Evoluzione</p>
+    <div class="hero-actions" data-aos>
+      <a href="#contatti" class="btn btn-primary">Prenota una lezione di prova</a>
+      <a href="#corsi" class="btn btn-outline">Scopri i corsi</a>
+    </div>
+
+    <div class="hero-stats" data-aos>
+      <div class="stat">
+        <span class="stat-num" data-count="500">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">Allievi</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="4">0</span><span class="stat-suffix"></span>
+        <span class="stat-label">Discipline</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="7">0</span><span class="stat-suffix"></span>
+        <span class="stat-label">Insegnanti</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="10">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">Anni di passione</span>
+      </div>
+    </div>
+  </div>
+
+  <a href="#chi-siamo" class="scroll-cue" aria-label="Scorri per saperne di più">
+    <span></span>
+  </a>
+</section>
+
+<!-- ============ CHI SIAMO ============ -->
+<section class="section" id="chi-siamo">
+  <div class="container split">
+    <div class="split-media" data-aos>
+      <div class="media-frame">
+        <div class="media-photo">
+          <img src="img/team.jpg" alt="Il team di Full Project Dance Studio Bari">
+        </div>
+        <div class="media-badge">
+          <span>Dal</span>
+          <strong>Gruppo Full Project</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-text" data-aos>
+      <p class="section-eyebrow">Chi siamo</p>
+      <h2>Una scuola nata dalla passione per il ballo</h2>
+      <p>
+        Full Project Dance Studio nasce a <strong>Bari</strong>, presso Gym Italy, da
+        un'idea del gruppo
+        <a href="https://www.instagram.com/full_project/" target="_blank" rel="noopener" class="brand-link"><strong>Full Project</strong></a>:
+        creare uno spazio dove chiunque, dal principiante assoluto al ballerino
+        esperto, possa scoprire ed esprimere la propria versione delle danze
+        caraibiche e urban, tra salsa, bachata, merengue e stile urban.
+      </p>
+      <p>
+        <!-- MODIFICA: personalizza questo paragrafo con la vera storia della scuola -->
+        Non siamo solo una scuola di ballo: siamo una community. Ogni corso è
+        pensato per farti crescere tecnicamente senza mai perdere la voglia di
+        divertirti, ballare in coppia e vivere la musica dal vivo.
+      </p>
+
+      <ul class="check-list">
+        <li>Corsi per principianti e livelli intermedi</li>
+        <li>7 insegnanti qualificati e appassionati</li>
+        <li>Danze caraibiche e stile urban nello stesso studio</li>
+        <li>Ambiente inclusivo, niente giudizi: solo ritmo</li>
+      </ul>
+
+      <a href="#corsi" class="link-arrow">Vai ai nostri corsi &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CORSI ============ -->
+<section class="section section-alt" id="corsi">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <p class="section-eyebrow">I nostri corsi</p>
+      <h2>Trova il ritmo che fa per te</h2>
+      <p class="section-sub">
+        Danze caraibiche e stile urban: scegli la tua disciplina, il tuo livello,
+        la tua sera.
+      </p>
+    </div>
+
+    <div class="cards-grid">
+      <article class="card" data-aos>
+        <div class="card-icon"><svg viewBox="0 0 48 48"><use href="#icon-flame"/></svg></div>
+        <h3>Salsa</h3>
+        <p>Il cuore della scuola: passi a tempo, giri e tanta energia caraibica.</p>
+        <span class="card-tag">Principianti &middot; Intermedio</span>
+      </article>
+
+      <article class="card" data-aos>
+        <div class="card-icon"><svg viewBox="0 0 48 48"><use href="#icon-heart"/></svg></div>
+        <h3>Bachata</h3>
+        <p>Connessione e musicalità: il ballo di coppia più sentito dei Caraibi.</p>
+        <span class="card-tag">Principianti &middot; Intermedio</span>
+      </article>
+
+      <article class="card" data-aos>
+        <div class="card-icon"><svg viewBox="0 0 48 48"><use href="#icon-wave"/></svg></div>
+        <h3>Merengue</h3>
+        <p>Il ritmo più travolgente delle danze caraibiche, semplice da imparare e pieno di energia.</p>
+        <span class="card-tag">Principianti &middot; Intermedio</span>
+      </article>
+
+      <article class="card" data-aos>
+        <div class="card-icon"><svg viewBox="0 0 48 48"><use href="#icon-star"/></svg></div>
+        <h3>Urban</h3>
+        <p>Stile, groove e musicalità contemporanea per chi vuole portare il ballo fuori dagli schemi.</p>
+        <span class="card-tag">Principianti &middot; Intermedio</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERCHÉ SCEGLIERCI ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <p class="section-eyebrow">Perché Full Project</p>
+      <h2>Più di una scuola di ballo</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature" data-aos>
+        <div class="feature-num">01</div>
+        <h3>Metodo strutturato</h3>
+        <p>Programmi divisi per livello, per progredire con basi solide e senza fretta.</p>
+      </div>
+      <div class="feature" data-aos>
+        <div class="feature-num">02</div>
+        <h3>Community vera</h3>
+        <p>Social dance, feste ed eventi per ballare fuori dalla sala corsi, insieme.</p>
+      </div>
+      <div class="feature" data-aos>
+        <div class="feature-num">03</div>
+        <h3>Insegnanti qualificati</h3>
+        <p>Un team con anni di esperienza in didattica, gare e spettacoli dal vivo.</p>
+      </div>
+      <div class="feature" data-aos>
+        <div class="feature-num">04</div>
+        <h3>Prova gratuita</h3>
+        <p>La prima lezione è su di noi: vieni a scoprire se il ballo fa per te.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSEGNANTI ============ -->
+<section class="section section-alt" id="insegnanti">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <p class="section-eyebrow">Il team</p>
+      <h2>I nostri insegnanti</h2>
+      <p class="section-sub">
+        Il team di Full Project Dance Studio: 7 istruttori uniti dalla stessa
+        passione per le danze caraibiche e l'urban.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card" data-aos>
+        <div class="avatar" style="--avatar-a:#c2281d;--avatar-b:#0d0b0a;">GB</div>
+        <h3>Gigi Bellomo</h3>
+        <span class="team-role">Principianti &middot; Intermedio II-III</span>
+      </div>
+      <div class="team-card" data-aos>
+        <div class="avatar" style="--avatar-a:#0d0b0a;--avatar-b:#c2281d;">LD</div>
+        <h3>Luisa Dabbicco</h3>
+        <span class="team-role">Principianti &middot; Intermedio</span>
+      </div>
+      <div class="team-card" data-aos>
+        <div class="avatar" style="--avatar-a:#7c1712;--avatar-b:#0d0b0a;">CD</div>
+        <h3>Cristian Dell'Oro</h3>
+        <span class="team-role">Principianti &middot; Intermedio</span>
+      </div>
+      <div class="team-card" data-aos>
+        <div class="avatar" style="--avatar-a:#0d0b0a;--avatar-b:#7c1712;">IB</div>
+        <h3>Isabel Barba</h3>
+        <span class="team-role">Intermedio II-III</span>
+      </div>
+      <div class="team-card" data-aos>
+        <div class="avatar" style="--avatar-a:#c2281d;--avatar-b:#3a3330;">GP</div>
+        <h3>Gabriele Pizzimenti</h3>
+        <span class="team-role">Istruttore Full Project</span>
+      </div>
+      <div class="team-card" data-aos>
+        <div class="avatar" style="--avatar-a:#3a3330;--avatar-b:#c2281d;">LS</div>
+        <h3>Luana Spagnoletti</h3>
+        <span class="team-role">Istruttrice Full Project</span>
+      </div>
+      <div class="team-card" data-aos>
+        <div class="avatar" style="--avatar-a:#7c1712;--avatar-b:#c2281d;">CR</div>
+        <h3>Christian Ranieri</h3>
+        <span class="team-role">Istruttore Full Project</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORARI ============ -->
+<section class="section" id="orari">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <p class="section-eyebrow">Orari</p>
+      <h2>Il nostro calendario corsi</h2>
+      <p class="section-sub">Orario in vigore per la stagione in corso: verifica sempre eventuali aggiornamenti sui nostri canali social.</p>
+    </div>
+
+    <div class="schedule-days" data-aos>
+      <div class="day-card">
+        <h3>Lunedì</h3>
+        <div class="day-slots">
+          <div class="day-slot">
+            <span class="day-slot-time">21:00 &ndash; 23:00</span>
+            <span class="day-slot-level">Intermedio</span>
+            <span class="day-slot-teachers">Cristian Dell'Oro, Luisa Dabbicco</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <h3>Martedì</h3>
+        <div class="day-slots">
+          <div class="day-slot">
+            <span class="day-slot-time">21:00 &ndash; 22:00</span>
+            <span class="day-slot-level">Principianti</span>
+            <span class="day-slot-teachers">Gigi Bellomo, Luisa Dabbicco</span>
+          </div>
+          <div class="day-slot">
+            <span class="day-slot-time">22:00 &ndash; 23:00</span>
+            <span class="day-slot-level">Intermedio II-III</span>
+            <span class="day-slot-teachers">Gigi Bellomo, Isabel Barba</span>
+          </div>
+          <div class="day-slot">
+            <span class="day-slot-time">22:00 &ndash; 23:00</span>
+            <span class="day-slot-level">Principianti</span>
+            <span class="day-slot-teachers">Cristian Dell'Oro, Luisa Dabbicco</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <h3>Giovedì</h3>
+        <div class="day-slots">
+          <div class="day-slot">
+            <span class="day-slot-time">21:00 &ndash; 22:00</span>
+            <span class="day-slot-level">Principianti</span>
+            <span class="day-slot-teachers">Gigi Bellomo, Luisa Dabbicco</span>
+          </div>
+          <div class="day-slot">
+            <span class="day-slot-time">22:00 &ndash; 23:00</span>
+            <span class="day-slot-level">Intermedio II-III</span>
+            <span class="day-slot-teachers">Gigi Bellomo, Isabel Barba</span>
+          </div>
+          <div class="day-slot">
+            <span class="day-slot-time">22:00 &ndash; 23:00</span>
+            <span class="day-slot-level">Principianti</span>
+            <span class="day-slot-teachers">Cristian Dell'Oro, Luisa Dabbicco</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="orari-location" data-aos>
+      <svg viewBox="0 0 24 24"><use href="#icon-pin"/></svg>
+      <span>Location: <strong>Gym Italy</strong> &mdash; Via Gaetano Devitofrancesco, 6, 70124 Bari (BA)</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ EVENTI ============ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <p class="section-eyebrow">Prossimi eventi</p>
+      <h2>Non solo corsi: viviamo il ballo</h2>
+      <!-- MODIFICA: le 3 card sotto sono di esempio, sostituiscile con i vostri eventi reali (date, titoli, descrizioni) -->
+    </div>
+
+    <div class="events-grid">
+      <article class="event-card" data-aos>
+        <div class="event-date"><span class="d">27</span><span class="m">SET</span></div>
+        <div class="event-info">
+          <h3>Full Project Social Night</h3>
+          <p>Serata social aperta a tutti: musica dal vivo, DJ set e tanta salsa in pista.</p>
+        </div>
+      </article>
+      <article class="event-card" data-aos>
+        <div class="event-date"><span class="d">11</span><span class="m">OTT</span></div>
+        <div class="event-info">
+          <h3>Workshop Bachata Sensual</h3>
+          <p>Un pomeriggio intensivo con insegnante ospite, aperto a livello intermedio e avanzato.</p>
+        </div>
+      </article>
+      <article class="event-card" data-aos>
+        <div class="event-date"><span class="d">08</span><span class="m">NOV</span></div>
+        <div class="event-info">
+          <h3>Saggio di fine trimestre</h3>
+          <p>Gli allievi salgono sul palco per mostrare i progressi fatti insieme al gruppo Full Project.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIANZE ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <p class="section-eyebrow">Cosa dicono di noi</p>
+      <h2>Voci dalla nostra community</h2>
+      <!-- MODIFICA: le testimonianze sotto sono di esempio, sostituiscile con recensioni reali dei vostri allievi -->
+    </div>
+
+    <div class="testimonial-grid">
+      <blockquote class="testimonial" data-aos>
+        <p>"Sono arrivata senza saper ballare un passo, dopo tre mesi mi sentivo già a casa in pista. Ambiente fantastico."</p>
+        <cite>&mdash; Allieva del corso Salsa</cite>
+      </blockquote>
+      <blockquote class="testimonial" data-aos>
+        <p>"Insegnanti preparati e sempre disponibili. Le serate social sono il modo migliore per mettere in pratica quello che impari."</p>
+        <cite>&mdash; Allievo del corso Bachata</cite>
+      </blockquote>
+      <blockquote class="testimonial" data-aos>
+        <p>"Full Project non è solo una scuola, è diventata la mia community del sabato sera."</p>
+        <cite>&mdash; Allieva del corso Urban</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERIA ============ -->
+<section class="section section-alt" id="galleria">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <p class="section-eyebrow">Galleria</p>
+      <h2>Momenti dalla nostra pista da ballo</h2>
+      <p class="section-sub">Uno sguardo al nostro team e ai nostri corsi. <!-- MODIFICA: aggiungi altre foto/video reali dai vostri canali social --></p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item g1 g-photo" data-aos style="background-image:url('img/team.jpg');"><span>Il team Full Project</span></div>
+      <div class="gallery-item g2" data-aos><span>Corso Salsa</span></div>
+      <div class="gallery-item g-photo" data-aos style="background-image:url('img/orario-settimanale.jpg');"><span>Orario settimanale</span></div>
+      <div class="gallery-item g4" data-aos><span>Corso Bachata</span></div>
+      <div class="gallery-item g5" data-aos><span>Serata Social</span></div>
+      <div class="gallery-item g6" data-aos><span>Corso Urban</span></div>
+    </div>
+
+    <div class="ig-cta" data-aos>
+      <a href="https://www.instagram.com/fullprojectdancestudio.bari/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="ig-icon"><use href="#icon-instagram"/></svg>
+        Seguici su Instagram @fullprojectdancestudio.bari
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GADGET ============ -->
+<section class="section section-alt" id="gadget">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <p class="section-eyebrow">Shop</p>
+      <h2>Porta a casa un pezzo di Full Project</h2>
+      <p class="section-sub">
+        <!-- MODIFICA: sostituisci nome, prezzo, descrizione e immagine di ogni gadget con i prodotti reali -->
+        Gadget ufficiali disponibili in sala. Scegli quello che vuoi e compila
+        il modulo qui sotto: ci accordiamo su ritiro e pagamento direttamente
+        in studio.
+      </p>
+    </div>
+
+    <div class="cards-grid gadget-grid">
+      <article class="card gadget-card" data-aos>
+        <div class="gadget-photo g2"></div>
+        <h3>T-Shirt Full Project</h3>
+        <p>100% cotone, logo ricamato sul petto.</p>
+        <span class="gadget-price">18&euro;</span>
+        <span class="card-tag">Taglie: S &middot; M &middot; L &middot; XL</span>
+      </article>
+
+      <article class="card gadget-card" data-aos>
+        <div class="gadget-photo g3"></div>
+        <h3>Felpa Full Project</h3>
+        <p>Girocollo pesante, perfetta per l'inverno in sala.</p>
+        <span class="gadget-price">35&euro;</span>
+        <span class="card-tag">Taglie: S &middot; M &middot; L &middot; XL</span>
+      </article>
+
+      <article class="card gadget-card" data-aos>
+        <div class="gadget-photo g4"></div>
+        <h3>Borsa Sportiva</h3>
+        <p>Capiente, ideale per scarpe da ballo e cambio.</p>
+        <span class="gadget-price">22&euro;</span>
+        <span class="card-tag">Taglia unica</span>
+      </article>
+
+      <article class="card gadget-card" data-aos>
+        <div class="gadget-photo g6"></div>
+        <h3>Borraccia Full Project</h3>
+        <p>500ml, in acciaio, logo inciso.</p>
+        <span class="gadget-price">12&euro;</span>
+        <span class="card-tag">Taglia unica</span>
+      </article>
+    </div>
+
+    <div class="gadget-order" data-aos>
+      <form class="contact-form" id="gadget-form" novalidate>
+        <h3>Richiedi un gadget</h3>
+
+        <div class="form-row">
+          <label for="gadget-nome">Nome e cognome</label>
+          <input type="text" id="gadget-nome" name="nome" required autocomplete="name">
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="gadget-email">Email</label>
+          <input type="email" id="gadget-email" name="email" required autocomplete="email">
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="gadget-telefono">Telefono</label>
+          <input type="tel" id="gadget-telefono" name="telefono" autocomplete="tel">
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-row-group">
+          <div class="form-row">
+            <label for="gadget-prodotto">Gadget</label>
+            <select id="gadget-prodotto" name="prodotto">
+              <option value="tshirt">T-Shirt Full Project &ndash; 18&euro;</option>
+              <option value="felpa">Felpa Full Project &ndash; 35&euro;</option>
+              <option value="borsa">Borsa Sportiva &ndash; 22&euro;</option>
+              <option value="borraccia">Borraccia Full Project &ndash; 12&euro;</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="gadget-taglia">Taglia (se prevista)</label>
+            <select id="gadget-taglia" name="taglia">
+              <option value="unica">Taglia unica</option>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="gadget-quantita">Quantit&agrave;</label>
+            <input type="number" id="gadget-quantita" name="quantita" min="1" value="1">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="gadget-note">Note (facoltativo)</label>
+          <textarea id="gadget-note" name="note" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Invia richiesta ordine</button>
+        <p class="form-success" id="gadget-form-success" hidden>Grazie! Ti contatteremo per accordarci su ritiro in sala e pagamento (contanti, bonifico o Satispay).</p>
+        <p class="form-note"><!-- MODIFICA: collega questo form a un servizio reale (es. Formspree, EmailJS) o a un backend --> Nota: form dimostrativo, da collegare a un servizio di invio email prima della pubblicazione. Il pagamento si concorda direttamente in sala.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="container cta-band-inner" data-aos>
+    <h2>Pronto a fare il primo passo?</h2>
+    <p>Prenota la tua lezione di prova gratuita e scopri il tuo stile con Full Project Dance Studio.</p>
+    <a href="#contatti" class="btn btn-primary btn-lg">Prenota ora</a>
+  </div>
+</section>
+
+<!-- ============ CONTATTI ============ -->
+<section class="section" id="contatti">
+  <div class="container split">
+    <div class="split-text" data-aos>
+      <p class="section-eyebrow">Contatti</p>
+      <h2>Vieni a trovarci in sala</h2>
+      <p>Ti aspettiamo in sala, presso Gym Italy.</p>
+
+      <ul class="contact-list">
+        <li>
+          <svg viewBox="0 0 24 24"><use href="#icon-pin"/></svg>
+          <span>Via Gaetano Devitofrancesco, 6, 70124 Bari (BA) &mdash; presso Gym Italy</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><use href="#icon-phone"/></svg>
+          <!-- MODIFICA: inserisci il numero di telefono/WhatsApp reale -->
+          <span>+39 000 000 0000</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><use href="#icon-mail"/></svg>
+          <!-- MODIFICA: inserisci l'email reale -->
+          <span>info@fullprojectdancestudio.it</span>
+        </li>
+      </ul>
+
+      <div class="social-row">
+        <a href="https://www.instagram.com/fullprojectdancestudio.bari/" target="_blank" rel="noopener" aria-label="Instagram Full Project Dance Studio Bari"><svg viewBox="0 0 24 24"><use href="#icon-instagram"/></svg></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><use href="#icon-facebook"/></svg></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><use href="#icon-tiktok"/></svg></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#icon-whatsapp"/></svg></a>
+      </div>
+    </div>
+
+    <div class="split-media" data-aos>
+      <form class="contact-form" id="contact-form" novalidate>
+        <h3>Richiedi la tua prova gratuita</h3>
+
+        <div class="form-row">
+          <label for="nome">Nome e cognome</label>
+          <input type="text" id="nome" name="nome" required autocomplete="name">
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="telefono">Telefono</label>
+          <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="corso">Corso di interesse</label>
+          <select id="corso" name="corso">
+            <option value="">Seleziona un corso</option>
+            <option value="salsa">Salsa</option>
+            <option value="bachata">Bachata</option>
+            <option value="merengue">Merengue</option>
+            <option value="urban">Urban</option>
+            <option value="altro">Non so ancora, ditemi voi</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="messaggio">Messaggio (facoltativo)</label>
+          <textarea id="messaggio" name="messaggio" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Invia richiesta</button>
+        <p class="form-success" id="form-success" hidden>Grazie! Ti risponderemo al più presto per fissare la tua prova gratuita.</p>
+        <p class="form-note"><!-- MODIFICA: collega questo form a un servizio reale (es. Formspree, EmailJS) o a un backend --> Nota: form dimostrativo, da collegare a un servizio di invio email prima della pubblicazione.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="#home" class="logo footer-logo">
+        <img src="img/logo.jpg" alt="Full Project Dance Studio" class="logo-mark">
+        <span class="logo-text">FULL PROJECT<br><small>DANCE STUDIO &middot; BARI</small></span>
+      </a>
+      <p>Un progetto del gruppo Full Project. Balla la vita, senti il ritmo.</p>
+    </div>
+
+    <div>
+      <h4>Naviga</h4>
+      <ul class="footer-links">
+        <li><a href="#chi-siamo">Chi Siamo</a></li>
+        <li><a href="#corsi">Corsi</a></li>
+        <li><a href="#insegnanti">Insegnanti</a></li>
+        <li><a href="#galleria">Galleria</a></li>
+        <li><a href="#gadget">Gadget</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Corsi</h4>
+      <ul class="footer-links">
+        <li>Salsa</li>
+        <li>Bachata</li>
+        <li>Merengue</li>
+        <li>Urban</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Seguici</h4>
+      <div class="social-row">
+        <a href="https://www.instagram.com/fullprojectdancestudio.bari/" target="_blank" rel="noopener" aria-label="Instagram Full Project Dance Studio Bari"><svg viewBox="0 0 24 24"><use href="#icon-instagram"/></svg></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><use href="#icon-facebook"/></svg></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><use href="#icon-tiktok"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> Full Project Dance Studio &mdash; Un progetto del gruppo Full Project. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+<!-- Bottone torna su -->
+<button id="back-to-top" class="back-to-top" aria-label="Torna su">&uarr;</button>
+
+<!-- ============ SVG ICON SPRITE ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="icon-flame"><path d="M24 4c4 8-4 10-4 18a8 8 0 1016 0c0-4-3-6-3-10 2 2 4 6 4 10a13 13 0 11-26 0C11 14 20 12 24 4z"/></g>
+    <g id="icon-star"><path d="M24 4l6 13 14 2-10 10 2 15-12-7-12 7 2-15L4 19l14-2z"/></g>
+    <g id="icon-heart"><path d="M24 42S6 30 6 17a10 10 0 0118-6 10 10 0 0118 6c0 13-18 25-18 25z"/></g>
+    <g id="icon-wave"><path d="M4 24c4-8 8 8 12 0s8 8 12 0 8 8 12 0 4 8 4 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></g>
+    <g id="icon-group"><circle cx="16" cy="16" r="6"/><circle cx="32" cy="16" r="6"/><path d="M4 40c0-8 6-13 12-13s12 5 12 13M20 40c0-8 6-13 12-13s12 5 12 13"/></g>
+    <g id="icon-mic"><rect x="18" y="4" width="12" height="24" rx="6"/><path d="M10 22a14 14 0 0028 0M24 36v8M16 44h16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></g>
+    <g id="icon-couple"><circle cx="16" cy="60" r="14"/><circle cx="16" cy="60" r="14"/></g>
+    <g id="icon-pin"><path d="M12 2a7 7 0 00-7 7c0 5.5 7 13 7 13s7-7.5 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#12100e"/></g>
+    <g id="icon-phone"><path d="M6 3h4l2 5-2.5 2.5a12 12 0 006 6L18 14l5 2v4a2 2 0 01-2 2A17 17 0 014 6a2 2 0 012-3z"/></g>
+    <g id="icon-mail"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M3 6l9 7 9-7" fill="none" stroke="#12100e" stroke-width="1.5"/></g>
+    <g id="icon-instagram"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2"/></g>
+    <g id="icon-facebook"><path d="M14 22V13h3l0.5-4H14V7c0-1.1.3-2 2-2h2V1.2C17.6 1 16.3 1 15 1c-3 0-5 1.8-5 5v3H7v4h3v9z"/></g>
+    <g id="icon-tiktok"><path d="M14 2h3a5 5 0 004 4v3a8 8 0 01-4-1v6a6 6 0 11-6-6h1v3h-1a3 3 0 103 3z"/></g>
+    <g id="icon-whatsapp"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.5 6.5 0 01-3.3-2.9c-.2-.3.2-.3.5-1a.6.6 0 000-.5c0-.1-.5-1.3-.7-1.7s-.4-.4-.5-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2c0 1.3.9 2.6 1.1 2.8s1.7 2.6 4.1 3.6c2 .8 2 .5 2.4.5s1.5-.6 1.7-1.2.2-1.1.1-1.2-.2-.2-.5-.3z"/></g>
+  </defs>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>
